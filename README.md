@@ -1,4 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How-To Step-by-Step
+
+1. Install CRA
+2. Create all the required subfolders and files
+3. Install required Materialize files (css and js)
+3. Start setting up all components with dummy content
+4. Install react-router-dom
+
 
 ## Available Scripts
 

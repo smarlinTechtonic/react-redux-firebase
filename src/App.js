@@ -1,25 +1,29 @@
+// Needed to install project using yarn with this command: yarn create react-app blah
+// Then yarn start to spin up project
+// In the public html, make sure to grab Materialize links.
+// Create all folder and subfolders
+// Install react-router-dom and set up BrowserRouter
+
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Navbar from './components/layout/NavBar';
+import Dashboard from './components/dashboard/Dashboard';
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route path="/project/:id" component={Dashboard} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
